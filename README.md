@@ -25,6 +25,13 @@ It is assumed that a schedule is a repetitive event over the time with a specifi
 * Have Kubectl installed.
 * Have Helm installed.
 
+## Index
+
+* [Create Kubernetes cluster](#create-kubernetes-cluster)
+* [Deploy pod examples into workloads namespace](#deploy-pod-examples-into-workloads-namespace)
+* [Deploy podchaosmonkey app](#deploy-podchaosmonkey-app)
+* [Check container image vulnerabilities](#check-container-image-vulnerabilities)
+
 ## Create Kubernetes cluster
 
 [Kind](https://kind.sigs.k8s.io/) can be used to create a Kubernetes cluster if you don't have your own cluster.
