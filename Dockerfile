@@ -22,7 +22,6 @@ LABEL org.opencontainers.image.source https://github.com/mmorejon/podchaosmonkey
 
 # copy users file and app binary
 COPY --from=builder /etc/passwd /etc/passwd
-# copy app from builder
 COPY --from=builder /go/bin/app /app
 # set non-root user
 USER podchaosmonkey

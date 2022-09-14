@@ -161,6 +161,8 @@ kubectl --namespace workloads get pods
 
 ## Deploy podchaosmonkey app
 
+The application use the default values defined in the [parameter section](#app-parameters), but these parameter can be changed in the [value.yaml file](https://github.com/mmorejon/podchaosmonkey/blob/main/chart/podchaosmonkey/values.yaml#L19).
+
 ```
 helm upgrade --install podchaosmonkey \
   --namespace podchaosmonkey --create-namespace \
@@ -224,5 +226,31 @@ kubectl --namespace podchaosmonkey logs \
   It is time to remove a new pod ...
   Number of pods available 17
   The pod deploy-example-1-7bd69c4c97-jj88k was removed.
+  ```
+</details>
+
+
+## Check container image vulnerabilities
+
+[Trivy](https://github.com/aquasecurity/trivy) can be used to detect vulnerabilities in the `podchaosmonkey` image.
+
+```
+trivy image ghcr.io/mmorejon/podchaosmonkey:v0.1.0
+```
+
+<details>
+  <summary>Output</summary>
+
+  ```
+  2022-09-14T12:15:12.510+0200    INFO    Need to update DB
+  2022-09-14T12:15:12.510+0200    INFO    DB Repository: ghcr.io/aquasecurity/trivy-db
+  2022-09-14T12:15:12.510+0200    INFO    Downloading DB...
+  33.86 MiB / 33.86 MiB [------------------------------------------------------------------------------------------------------------------------------------------------------] 100.00% 17.17 MiB p/s 2.2s
+  2022-09-14T12:15:16.177+0200    INFO    Vulnerability scanning is enabled
+  2022-09-14T12:15:16.177+0200    INFO    Secret scanning is enabled
+  2022-09-14T12:15:16.177+0200    INFO    If your scanning is slow, please try '--security-checks vuln' to disable secret scanning
+  2022-09-14T12:15:16.177+0200    INFO    Please see also https://aquasecurity.github.io/trivy/v0.31.2/docs/secret/scanning/#recommendation for faster secret detection
+  2022-09-14T12:15:19.121+0200    INFO    Number of language-specific files: 1
+  2022-09-14T12:15:19.121+0200    INFO    Detecting gobinary vulnerabilities...
   ```
 </details>
