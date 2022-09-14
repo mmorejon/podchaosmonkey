@@ -170,6 +170,17 @@ kubectl --namespace workloads get pods
 
 The application use the default values defined in the [parameter section](#app-parameters), but these parameter can be changed in the [value.yaml file](https://github.com/mmorejon/podchaosmonkey/blob/main/chart/podchaosmonkey/values.yaml#L19).
 
+Clone github repository.
+
+```
+{
+  git clone git@github.com:mmorejon/podchaosmonkey.git
+  cd podchaosmonkey
+}
+```
+
+Deploy podchaosmonkey app using helm.
+
 ```
 helm upgrade --install podchaosmonkey \
   --namespace podchaosmonkey --create-namespace \
