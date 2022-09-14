@@ -1,0 +1,6 @@
+apiVersion: v2
+name: podchaosmonkey
+description: Pod Chaos Monkey chart
+type: application
+version: 0.1.0
+appVersion: "v0.1.0"
