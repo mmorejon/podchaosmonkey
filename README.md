@@ -94,7 +94,7 @@ kubectl get nodes
 Create `workloads` namespace
 
 ```
-kubectl create namespace workloads.
+kubectl create namespace workloads
 ```
 
 <details>
